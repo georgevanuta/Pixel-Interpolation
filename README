@@ -1,0 +1,26 @@
+      -For the RGB ones: all the RGB functions follow the same logic, the only difference
+      being the function called for each color. First of all, I extract the colors
+      (1-red, 2-green, 3-blue), then I apply each respective function, then I obtain
+      the output by concatenating the three results( cat(3, R_rez, V_rez, A_rez));
+      
+      -For surrounding_points: Initially, the points are the biggest integer values
+      bigger then (x, y) -> (x1, y1) and the incremented value of each (x2, y2).
+      If the point is at the border, the values are decremented.
+      
+      -For nearest-neighbour:
+      
+      *nn_2x2 - I choose the values of the pixel by its quadrant
+  -Pentru nearest-neighbour:
+  
+      -For bilinear:
+      
+      *bilinear_rotate - I determine if a point is outside the image by comparing it
+      with the borders(x with [1, n], y with [1, m])
+  
+      For bicubic:
+      
+      *bicubic_coef - to make the code more readable, the matrix containing the values of
+      the function and its derivatives is the result of concatanating 4 other matrixes
+      (AUXfin = cat(2, cat(2, AUXf, AUXfy)', cat(2, AUXfx, AUXfxy)')')
+  
+  
